@@ -1,0 +1,108 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTecher's Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>SPTecher's Machine</h1>
+    <div class="container">
+
+        <div class="main">
+            <div class="header">
+                <h3>Digite um número decimal:</h3>
+                <input id="input_decimal" type="text" placeholder="Ex: 42">
+                <br><br>
+                <button onclick="converterDecimal()">Converter</button>
+            </div>
+            <h3>Resultados:</h3>
+            <p>Octal: <span id="demo1"></span></p>
+            <p>Hexadecimal: <span id="demo2"></span></p>
+            <p>Binário: <span id="demo3"></span></p>
+        </div>
+
+        <div class="main">
+            <div class="header">
+                <h3>Digite um número Binário:</h3>
+                <input id="input_binario" type="text" placeholder="Ex: 1010">
+                <br><br>
+                <button onclick="converterBinario()">Converter</button>
+            </div>
+            <h3>Resultados:</h3>
+            <p>Octal: <span id="bina1"></span></p>
+            <p>Hexadecimal: <span id="bina2"></span></p>
+            <p>Decimal: <span id="bina3"></span></p>
+        </div>
+
+        <div class="main">
+            <div class="header">
+                <h3>Digite um número Octal:</h3>
+                <input id="input_octal" type="text" placeholder="Ex: 12">
+                <br><br>
+                <button onclick="converterOctal()">Converter</button>
+            </div>
+            <h3>Resultados:</h3>
+            <p>Decimal: <span id="octal1"></span></p>
+            <p>Hexadecimal: <span id="octal2"></span></p>
+            <p>Binário: <span id="octal3"></span></p>
+        </div>
+
+        <div class="main">
+            <div class="header">
+                <h3>Digite um número Hexadecimal:</h3>
+                <input id="input_hexadecimal" type="text" placeholder="Ex: a">
+                <br><br>
+                <button onclick="converterHexadecimal()">Converter</button>
+            </div>
+            <h3>Resultados:</h3>
+            <p>Octal: <span id="hexa1"></span></p>
+            <p>Binário: <span id="hexa2"></span></p>
+            <p>Decimal: <span id="hexa3"></span></p>
+        </div>
+
+    </div>
+
+
+    <script>
+        function converterDecimal() {
+            let decimal = Number(input_decimal.value);
+
+            demo1.innerHTML = decimal.toString(8);
+            demo2.innerHTML = decimal.toString(16);
+            demo3.innerHTML = decimal.toString(2);
+        }
+
+        function converterBinario() {
+            let binario = parseInt(input_binario.value, 2);
+
+            bina1.innerHTML = binario.toString(8);
+            bina2.innerHTML = binario.toString(16);
+            bina3.innerHTML = binario.toString(10);
+        }
+
+        function converterOctal() {
+            let octal = parseInt(input_octal.value, 8);
+
+            octal1.innerHTML = octal.toString(10);
+            octal2.innerHTML = octal.toString(16);
+            octal3.innerHTML = octal.toString(2);
+        }
+
+        function converterHexadecimal() {
+            let hexadecimal = parseInt(input_hexadecimal.value, 16);
+
+            hexa1.innerHTML = hexadecimal.toString(8);
+            hexa2.innerHTML = hexadecimal.toString(2);
+            hexa3.innerHTML = hexadecimal.toString(10);
+        }
+    </script>
+</body>
+
+</html>
